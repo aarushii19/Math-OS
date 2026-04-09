@@ -19,6 +19,8 @@ jc error
 mov al, 'K'
 int 0x10
 
+jmp 0x0000:0x1000
+
 error:
 mov al, 'E'
 int 0x10
