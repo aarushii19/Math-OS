@@ -16,6 +16,9 @@ mov dl, [BOOT_DRIVE]
 int 0x13
 jc error
 
+mov al, 'K'
+int 0x10
+
 error:
 mov al, 'E'
 int 0x10
