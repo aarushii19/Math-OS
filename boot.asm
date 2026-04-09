@@ -14,3 +14,9 @@ mov cl, 2
 mov dh, 0
 mov dl, [BOOT_DRIVE]
 int 0x13
+jc error
+
+error:
+mov al, 'E'
+int 0x10
+jmp $
