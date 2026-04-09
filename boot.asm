@@ -25,3 +25,5 @@ error:
 mov al, 'E'
 int 0x10
 jmp $
+
+BOOT_DRIVE db 0
