@@ -7,3 +7,10 @@ mov al, 'M'
 int 0x10
 
 mov bx, 0x1000
+mov ah, 0x02
+mov al, 2
+mov ch, 0
+mov cl, 2
+mov dh, 0
+mov dl, [BOOT_DRIVE]
+int 0x13
