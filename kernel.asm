@@ -20,6 +20,9 @@ mov ah, 0x0e
 int 0x10
 call newline
 
+mov si, msg1
+call print_string
+
 print_string:
 lodsb
 cmp al, 0
