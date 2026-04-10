@@ -2,9 +2,6 @@
 
 mov ah, 0x0e
 
-mov si, title
-call print_string
-call newline
 
 print_string:
 lodsb
@@ -22,6 +19,10 @@ int 0x10
 mov al, 10
 int 0x10
 ret
+
+mov si, title
+call print_string
+call newline
 
 end:
 jmp $
