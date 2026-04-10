@@ -32,6 +32,8 @@ int 0x10
 sub c1, '0'
 call newline
 
+mov si, msg2
+call print_string
 
 print_string:
 lodsb
