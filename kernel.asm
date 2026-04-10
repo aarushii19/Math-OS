@@ -73,7 +73,12 @@ mul dl
 mov cl, al
 jmp print_result
 
-
+div_op:
+mov al, cl
+mov ah, 0
+div dl
+mov cl, al
+jmp print_result
 
 
 
