@@ -1,4 +1,5 @@
 
+
 [org 0x1000]
 
 mov ah, 0x0e
@@ -44,6 +45,19 @@ int 0x10
 sub dl, '0'
 call newline
 
+cmp bl, '1'
+je add_op
+
+cmp bl, '2'
+je sub_op
+
+cmp bl, '3'
+je mul_op
+
+cmp bl, '4'
+je div_op
+
+jmp end
 
 print_string:
 lodsb
