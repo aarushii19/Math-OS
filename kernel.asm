@@ -59,6 +59,14 @@ je div_op
 
 jmp end
 
+add_op:
+add c1, d1
+jmp print_result
+
+
+
+
+
 print_string:
 lodsb
 cmp al, 0
