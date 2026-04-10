@@ -7,6 +7,11 @@ mov si, title
 call print_string
 call newline
 
+mov si, menu
+call print_string
+call newline
+
+
 print_string:
 lodsb
 cmp al, 0
