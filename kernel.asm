@@ -63,7 +63,9 @@ add_op:
 add c1, d1
 jmp print_result
 
-
+sub_op:
+sub cl, dl
+jmp print_result
 
 
 
