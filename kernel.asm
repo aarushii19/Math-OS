@@ -80,7 +80,15 @@ div dl
 mov cl, al
 jmp print_result
 
+print_result:
+add cl, '0'
 
+mov si, result_msg
+call print_string
+
+mov al, cl
+mov ah, 0x0e
+int 0x10
 
 
 print_string:
