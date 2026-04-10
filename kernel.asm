@@ -67,6 +67,15 @@ sub_op:
 sub cl, dl
 jmp print_result
 
+mul_op:
+mov al, cl
+mul dl
+mov cl, al
+jmp print_result
+
+
+
+
 
 
 print_string:
