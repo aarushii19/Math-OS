@@ -1,3 +1,4 @@
+
 [org 0x1000]
 
 mov ah, 0x0e
@@ -11,6 +12,16 @@ mov si, menu
 call print_string
 call newline
 
+mov ah, 0
+int 0x16
+mov b1, a1
+
+mov ah, 0x0e
+int 0x10
+call newline
+
+mov si, msg1
+call print_string
 
 print_string:
 lodsb
