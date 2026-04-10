@@ -15,7 +15,7 @@ call newline
 
 mov ah, 0
 int 0x16
-mov b1, a1
+mov bl, al
 
 mov ah, 0x0e
 int 0x10
@@ -26,11 +26,11 @@ call print_string
 
 mov ah, 0
 int 0x16
-mov c1, a1
+mov cl, al
 
 mov ah, 0x0e
 int 0x10
-sub c1, '0'
+sub cl, '0'
 call newline
 
 mov si, msg2
@@ -54,17 +54,41 @@ je sub_op
 cmp bl, '3'
 je mul_op
 
-cmp bl, '4'
+cmp bl	, '4'
 je div_op
 
 jmp end
 
 add_op:
-add c1, d1
+add cl, dl
 jmp print_result
 
+sub_op:
+sub cl, dl
+jmp print_result
 
+mul_op:
+mov al, cl
+mul dl
+mov cl, al
+jmp print_result
 
+div_op:
+mov al, cl
+mov ah, 0
+div dl
+mov cl, al
+jmp print_result
+
+print_result:
+add cl, '0'
+
+mov si, result_msg
+call print_string
+
+mov al, cl
+mov ah, 0x0e
+int 0x10
 
 
 print_string:
@@ -86,3 +110,10 @@ ret
 
 end:
 jmp $
+
+
+title db 'MathOS',0
+menu db '1:Add 2:Sub 3:Mul 4:Div',0
+msg1 db 'Enter A: ',0
+msg2 db 'Enter B: ',0
+result_msg db 'Result: ',0
